@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            background: #525252;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 100vh;
+        }
+        .item {
+            background: #ececec;
+            padding: 20px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+        }
+        .list {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 600px;
+            height: 600px;
+            overflow-y: scroll;
+            gap: 16px;
+            background: #2B2B2B;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="list"></div>
+<script>
+    const list = document.querySelector('.list')
+
+    for (let i = 0; i <= 400; i++) {
+        let item = document.createElement('div')
+        item.setAttribute('class', 'item')
+        item.textContent= 'Item '+ i
+        list.appendChild(item)
+    }
+    const list2 = list.cloneNode(true)
+    list2.style['flex-direction'] = 'column-reverse'
+    document.querySelector('body').appendChild(list2)
+
+</script>
+</body>
+</html>
